@@ -12,7 +12,7 @@ function divideAndConquerSum(a) {
 
     //Split the array into three roguhly equal sub-arrays.
     //Calculate the length of the array. 
-    var length = a.alength;
+    var length = a.length;
 
     //Calculate the indices to split the array into rouhgly equal sub-arrays.
     var part1 = Math.round(n/3);
@@ -22,5 +22,5 @@ function divideAndConquerSum(a) {
     // 1. The first sub-array: from the start of the list to partition 1.
     // 2. The second sub-array: from partition 1 to partition 2.
     // 3. The third sub-array: from partition 2 to the end of the list.
-    return dividedAndConquerSum(a.slice(0,part1)) + dividedAndConquerSum(a.slice(part1,part2)) + dividedAndConquerSum(a.slice(part2));
+    return divideAndConquerSum(a.slice(0,part1)) + divideAndConquerSum(a.slice(part1,part2)) + divideAndConquerSum(a.slice(part2));
 }
