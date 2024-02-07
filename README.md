@@ -26,3 +26,22 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+## Recurrance Relation 
+- we start with T(n) as the function of time it takes for the problem to be solved with 'n' elements.
+- The divideAndConquerSum Function
+  This funstion splits and array into three roughly equal sized sub-arrays. The base cases are when the array is empty or only have one element.
+  1. Base Case:
+     - T(0) = 1
+     - T(1) = 1
+  2. Recursive Case:
+     - This is when the input array has a length greater than one.
+     - The function makes 3 recursive calls on the array divided into 3 roughly same sized sub-arrays that are size n/3.
+     - This will give us T(n) = 3T(n/3) + c.
+         - The three infront of T(n/3) comes form the recusrive calls made.
+         - The 'n/3' comes from the size of the array which the recursive calls are made on.
+         - and the 'c' is the constant time it takes for the array to be split and summation.
+
+## Solving the Recurraence Relation 
+- 
+
