@@ -15,7 +15,7 @@ function divideAndConquerSum(a) {
     var length = a.length;
 
     //Calculate the indices to split the array into rouhgly equal sub-arrays.
-    var part1 = Math.round(n/3);
+    var part1 = Math.round(length/3);
     var part2 = part1 * 2;
     
     // Recursively calal the function on the three sub-arrays and sum the result.
