@@ -32,16 +32,37 @@ most important part. Add your answer to this markdown file.
 - The divideAndConquerSum Function
   This funstion splits and array into three roughly equal sized sub-arrays. The base cases are when the array is empty or only have one element.
   1. Base Case:
-     - T(0) = 1
-     - T(1) = 1
+     - $\ T(0) = 1 $
+     - $\ T(1) = 1 $
   2. Recursive Case:
      - This is when the input array has a length greater than one.
      - The function makes 3 recursive calls on the array divided into 3 roughly same sized sub-arrays that are size n/3.
-     - This will give us T(n) = 3T(n/3) + c.
+     - This will give us $\ T(n) = 3 \cdot T \left(\frac{n}{3}\right) + c $
          - The three infront of T(n/3) comes form the recusrive calls made.
          - The 'n/3' comes from the size of the array which the recursive calls are made on.
          - and the 'c' is the constant time it takes for the array to be split and summation.
 
 ## Solving the Recurraence Relation 
-- 
+- $\ T(n) = 3 \cdot T\left(\frac{n}{3}\right) + c $
+- we then expand the recurrence realtion.
+- $\ T\left(\frac{n}{3}\right) = 3\cdot \left(3\cdot T \left(\frac{n}{9}\right) + c\right) + c $
+- this give us.
+- $\ T \left(\frac{n}{3}\right) = 3^{2} \cdot T\left(\frac{n}{9}\right) + 3c + c $
+- We need to continue through iterations to determine a pattern.
+- $\ T \left(\frac{n}{9}\right) = 3^{3} \cdot T\left(\frac{n}{27}\right) + 3^{2}c + 3c + c $
+- This give us a pattern
+- $\ T(n) = 3^{k} \cdot T(\frac{n}{3^{k}}) + c\cdot \sum_{i=0}^{k-1} 3^i $
+- Now we can find a value for k to make $\ \frac{n}{3^{k}} = 1 $
+- This will give us $\ k = \log_3 n $
+- Now we can substitute this value back into the equation.
+- $\ T \left(n\right) = 3^{\log_3 n} \cdot T \left(1\right) + c\cdot \sum_{i=0}^{\log_3 n-1} 3^{i} $
+- Now the sum is a geometric series.
+- Which will give us $\ \frac{n - 1}{2} $
+- Now we have $\ T \left(n\right) = n\cdot T\left(1\right) + c \cdot \frac{n - 1}{2} $
+
+## Runtime Analysis
+- Because of the base case we know that $\ T \left(1\right) is constant.
+- We can see that for  $\ \frac {n -1}{2} $ the domanant term is n which is linear.
+- So know we have $\ T \left(n\right) = \Theta\left(n\right) $  
+
 
