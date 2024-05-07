@@ -63,6 +63,8 @@ most important part. Add your answer to this markdown file.
 ## Runtime Analysis
 - Because of the base case we know that $\ T \left(1\right) is constant.
 - We can see that for  $\ \frac {n -1}{2} $ the domanant term is n which is linear.
-- So know we have $\ T \left(n\right) \in \Theta\left(n\right) $  
+- So know we have $\ T \left(n\right) \in \Theta\left(n\right) $
+
+  // I recieved help from the TA as well ass reviewing my repository divide-and-conquer-sum-swilso59.
 
 
